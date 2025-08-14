@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead Generation In-House</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            transition: background-color 0.5s ease-in-out;
+        }
+        .slide {
+            display: none;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .slide.active {
+            display: flex;
+            opacity: 1;
+        }
+        .bg-color-1 { background-color: #fef3c7; }
+        .bg-color-2 { background-color: #d1fae5; }
+        .bg-color-3 { background-color: #c7d2fe; }
+        .bg-color-4 { background-color: #e0e7ff; }
+        .bg-color-5 { background-color: #fce7f3; }
+        .card {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .button-nav {
+            transform: scale(1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .button-nav:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .button-nav:active {
+            transform: scale(0.95);
+        }
+        .animate-in {
+            animation: slide-in 0.8s forwards ease-in-out;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes slide-in {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- Header and Navigation -->
+    <header class="flex justify-between items-center p-6 bg-white shadow-lg rounded-b-3xl">
+        <h1 class="text-3xl font-bold text-gray-800">
+            <span class="text-orange-500">Project</span> In-House
+        </h1>
+        <div class="flex items-center space-x-2">
+            <button id="prevBtn" class="bg-gray-200 text-gray-800 p-3 rounded-full shadow-md hover:bg-gray-300 transition-colors hidden button-nav">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <button id="nextBtn" class="bg-orange-500 text-white p-3 rounded-full shadow-md hover:bg-orange-600 transition-colors button-nav">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Area for Slides -->
+    <main id="presentation-container" class="flex-grow flex justify-center items-center p-8 transition-colors duration-500">
+        <!-- Slide 1: Title Slide -->
+        <section id="slide-1" class="slide active bg-color-1 w-full h-full p-12 rounded-3xl text-center flex-col justify-center items-center transition-all duration-500">
+            <div class="animate-in delay-200">
+                <h2 class="text-6xl md:text-8xl font-extrabold text-gray-900 leading-tight">Bringing Lead Generation</h2>
+                <h2 class="text-6xl md:text-8xl font-extrabold text-orange-500 leading-tight mb-8">In-House</h2>
+                <p class="text-lg md:text-xl text-gray-700">Prepared by: Amer Hamamreh | Date: August 14, 2025</p>
+            </div>
+        </section>
+
+        <!-- Slide 2: Why Move? -->
+        <section id="slide-2" class="slide bg-color-2 w-full h-full p-8 md:p-12 rounded-3xl flex-col justify-center items-center transition-all duration-500">
+            <div class="animate-in delay-200">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-8 text-center">Why Move Away from the Current Vendor?</h2>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full max-w-6xl animate-in delay-400">
+                <div class="card p-6 rounded-2xl flex flex-col justify-between h-full">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-2">Cost & Control</h3>
+                        <ul class="text-gray-700 space-y-2 text-sm md:text-base">
+                            <li><strong>Current Vendor:</strong> $35 CPL (fixed)</li>
+                            <li><strong>In-House:</strong> $35 CPL now, targeted to <span class="text-green-600 font-bold">$25 in 6 months</span></li>
+                            <li><strong>Ad Spend:</strong> External control vs. <span class="text-blue-600 font-bold">Direct control & daily optimization</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card p-6 rounded-2xl flex flex-col justify-between h-full">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-2">Quality & Scalability</h3>
+                        <ul class="text-gray-700 space-y-2 text-sm md:text-base">
+                            <li><strong>Lead Quality:</strong> Vendor-defined filtering vs. <span class="text-green-600 font-bold">Tailored to our exact needs</span></li>
+                            <li><strong>Scalability:</strong> Limited to vendor vs. <span class="text-blue-600 font-bold">Scales with both paid & organic channels</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card p-6 rounded-2xl flex flex-col justify-between h-full">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-2">Data Ownership</h3>
+                        <p class="text-gray-700 text-sm md:text-base">
+                            The vendor currently owns the initial data.
+                            By moving in-house, <span class="text-green-600 font-bold">we own all targeting and funnel data</span>, giving us a massive competitive advantage.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 3: The 3-Phase Plan -->
+        <section id="slide-3" class="slide bg-color-3 w-full h-full p-8 md:p-12 rounded-3xl flex-col justify-center items-center transition-all duration-500">
+            <div class="animate-in delay-200">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-8 text-center">The 3-Phase Plan</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl animate-in delay-400">
+                <div class="card p-6 rounded-2xl flex flex-col items-center text-center">
+                    <div class="bg-orange-500 text-white w-16 h-16 flex items-center justify-center rounded-full text-3xl font-bold mb-4">1</div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-2">Phase 1: Trial Run</h3>
+                    <p class="text-gray-700"><strong>5-7 Days</strong></p>
+                    <p class="text-gray-700 mt-2">$1,000 test budget (~28 leads at $35 CPL)</p>
+                </div>
+                <div class="card p-6 rounded-2xl flex flex-col items-center text-center">
+                    <div class="bg-orange-500 text-white w-16 h-16 flex items-center justify-center rounded-full text-3xl font-bold mb-4">2</div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-2">Phase 2: Shared Budget</h3>
+                    <p class="text-gray-700"><strong>50% of daily spend</strong></p>
+                    <p class="text-gray-700 mt-2">Begin organic lead generation</p>
+                </div>
+                <div class="card p-6 rounded-2xl flex flex-col items-center text-center">
+                    <div class="bg-orange-500 text-white w-16 h-16 flex items-center justify-center rounded-full text-3xl font-bold mb-4">3</div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-2">Phase 3: Full Transition</h3>
+                    <p class="text-gray-700"><strong>All leads generated internally</strong></p>
+                    <p class="text-gray-700 mt-2">Targeting a 15-25% CPL reduction in 3-6 months</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 4: Projected Impact & Savings -->
+        <section id="slide-4" class="slide bg-color-4 w-full h-full p-8 md:p-12 rounded-3xl flex-col justify-center items-center transition-all duration-500">
+            <div class="animate-in delay-200">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-8 text-center">Projected Impact</h2>
+            </div>
+            <div class="card p-8 rounded-2xl w-full max-w-4xl animate-in delay-400">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="text-center">
+                        <h3 class="text-5xl lg:text-6xl font-extrabold text-orange-500 mb-2">~$91,250+</h3>
+                        <p class="text-xl font-semibold text-gray-800">Annual Savings</p>
+                    </div>
+                    <div class="flex flex-col items-center justify-center">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <span class="text-xl md:text-2xl text-gray-600">Current:</span>
+                            <span class="text-2xl md:text-3xl font-bold text-red-600">$1,000/day</span>
+                            <span class="text-xl md:text-2xl text-gray-600">for ~28 leads</span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <span class="text-xl md:text-2xl text-gray-600">Goal:</span>
+                            <span class="text-2xl md:text-3xl font-bold text-green-600">$1,000/day</span>
+                            <span class="text-xl md:text-2xl text-gray-600">for ~40 leads</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Slide 5: Why It Works -->
+        <section id="slide-5" class="slide bg-color-5 w-full h-full p-8 md:p-12 rounded-3xl flex-col justify-center items-center transition-all duration-500">
+            <div class="animate-in delay-200">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-8 text-center">Why This Works</h2>
+            </div>
+            <div class="flex flex-col md:flex-row gap-6 w-full max-w-6xl animate-in delay-400">
+                <div class="card p-6 rounded-2xl flex flex-col justify-start items-center text-center flex-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-orange-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-2">Insider Advantage</h3>
+                    <p class="text-gray-700">We know our exact target customer profile better than anyone else.</p>
+                </div>
+                <div class="card p-6 rounded-2xl flex flex-col justify-start items-center text-center flex-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-orange-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-2">Faster Adjustments</h3>
+                    <p class="text-gray-700">Daily optimization allows us to react and improve our campaigns in real-time.</p>
+                </div>
+                <div class="card p-6 rounded-2xl flex flex-col justify-start items-center text-center flex-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-orange-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-2">Full Data Control</h3>
+                    <p class="text-gray-700">We own all the audience data, enabling smarter future strategies.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 6: Call to Action -->
+        <section id="slide-6" class="slide bg-color-1 w-full h-full p-12 rounded-3xl text-center flex-col justify-center items-center transition-all duration-500">
+            <div class="animate-in delay-200">
+                <h2 class="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-4">Next Step:</h2>
+                <p class="text-3xl md:text-4xl font-semibold text-orange-500 mb-8">Approve the $1,000 Trial Budget</p>
+                <div class="flex justify-center space-x-4">
+                    <p class="text-lg md:text-xl text-gray-700">It's a risk-free comparison with our current vendor, with the decision based on real results.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const presentationContainer = document.getElementById('presentation-container');
+            let currentSlideIndex = 0;
+
+            const updateNavigation = () => {
+                prevBtn.classList.toggle('hidden', currentSlideIndex === 0);
+                nextBtn.classList.toggle('hidden', currentSlideIndex === slides.length - 1);
+            };
+
+            const showSlide = (index) => {
+                // Hide all slides
+                slides.forEach(slide => {
+                    slide.classList.remove('active');
+                    slide.style.display = 'none'; // Ensure display is none for slides not active
+                });
+                // Show the current slide
+                const currentSlide = slides[index];
+                if (currentSlide) {
+                    currentSlide.style.display = 'flex'; // Set to flex for centering
+                    setTimeout(() => {
+                        currentSlide.classList.add('active');
+                        // Animate in child elements
+                        currentSlide.querySelectorAll('.animate-in').forEach(element => {
+                            element.style.animationPlayState = 'running';
+                            element.style.opacity = '0'; // Reset opacity for re-animation
+                            element.style.transform = 'translateY(20px)'; // Reset transform for re-animation
+                        });
+                    }, 50);
+
+                    // Update background color
+                    presentationContainer.className = `flex-grow flex justify-center items-center p-8 transition-colors duration-500 ${currentSlide.className.match(/bg-color-\d+/)}`;
+                }
+
+                // Update navigation button visibility
+                updateNavigation();
+            };
+
+            const nextSlide = () => {
+                if (currentSlideIndex < slides.length - 1) {
+                    currentSlideIndex++;
+                    showSlide(currentSlideIndex);
+                }
+            };
+
+            const prevSlide = () => {
+                if (currentSlideIndex > 0) {
+                    currentSlideIndex--;
+                    showSlide(currentSlideIndex);
+                }
+            };
+
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+
+            // Handle keyboard navigation for desktop
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' || e.key === ' ') {
+                    nextSlide();
+                } else if (e.key === 'ArrowLeft') {
+                    prevSlide();
+                }
+            });
+
+            // Handle touch navigation for mobile
+            let touchstartX = 0;
+            let touchendX = 0;
+
+            const handleGesture = () => {
+                if (touchendX < touchstartX - 50) {
+                    nextSlide();
+                }
+                if (touchendX > touchstartX + 50) {
+                    prevSlide();
+                }
+            }
+
+            presentationContainer.addEventListener('touchstart', e => {
+                touchstartX = e.changedTouches[0].screenX;
+            });
+
+            presentationContainer.addEventListener('touchend', e => {
+                touchendX = e.changedTouches[0].screenX;
+                handleGesture();
+            });
+
+            // Initial slide display
+            showSlide(currentSlideIndex);
+        });
+    </script>
+</body>
+</html>
